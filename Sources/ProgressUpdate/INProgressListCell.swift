@@ -67,12 +67,12 @@ public struct INProgressListCell: View {
 struct ProgressListCell_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            INProgressListCell(item: INProgressItem(status: .queued))
-            INProgressListCell(item: INProgressItem(status: .paused))
-            INProgressListCell(item: INProgressItem(status: .finished(true)))
-            INProgressListCell(item: INProgressItem(status: .finished(false)))
-            INProgressListCell(item: INProgressItem(status: .inProgress(5)))
-            INProgressListCell(item: INProgressItem(status: .inProgress(90)))
+            INProgressListCell(item: INProgressItem(status: .queued, name: "Queued"))
+            INProgressListCell(item: INProgressItem(status: .paused, name: "Paused"))
+            INProgressListCell(item: INProgressItem(status: .finished(true), name: "Finished Success"))
+            INProgressListCell(item: INProgressItem(status: .finished(false), name: "Finished Failure"))
+            INProgressListCell(item: INProgressItem(status: .inProgress(5), name: "In Progress 5%"))
+            INProgressListCell(item: INProgressItem(status: .inProgress(90), name: "In Progress 90%"))
         }
             .frame(maxHeight: .infinity, alignment: .top)
     }

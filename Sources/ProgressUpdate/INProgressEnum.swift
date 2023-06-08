@@ -4,12 +4,17 @@
 
 import Foundation
 
-public struct INProgressItem {
-    var status: INProgress
-    var lastUpdate: Date = Date()
-    var name: String = {
+public class INProgressItem: ObservableObject {
+    @Published var status: INProgress = .paused
+    @Published var lastUpdate: Date = Date()
+    @Published var name: String = {
         "\(Int(arc4random()) % 1000)"
     }()
+    
+    public init(status: INProgress, name: String) {
+        self.status = status
+        self.name = name
+    }
 }
 
 extension INProgressItem: CustomStringConvertible {
@@ -18,7 +23,22 @@ extension INProgressItem: CustomStringConvertible {
     }
 }
 
-extension INProgressItem: Hashable {}
+extension INProgressItem: Equatable {
+    public static func == (lhs: INProgressItem, rhs: INProgressItem) -> Bool {
+        lhs.status == rhs.status && lhs.name == rhs.name
+    }
+}
+
+extension INProgressItem: Hashable {
+    public var hashValue: Int {
+        name.hashValue * 1000 + status.hashValue % 1000
+    }
+
+    public func hash(into hasher: inout Hasher) {
+        hasher.combine(name)
+        hasher.combine(status)
+    }
+}
 
 public enum INProgress {
     case queued
