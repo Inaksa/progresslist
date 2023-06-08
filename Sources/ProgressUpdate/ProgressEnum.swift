@@ -4,7 +4,7 @@
 
 import Foundation
 
-struct ProgressItem {
+public struct ProgressItem {
     var status: Progress
     var lastUpdate: Date = Date()
     var name: String = {
@@ -13,20 +13,20 @@ struct ProgressItem {
 }
 
 extension ProgressItem: CustomStringConvertible {
-    var description: String {
+    public var description: String {
         return "\(status)"
     }
 }
 
 extension ProgressItem: Hashable {}
 
-enum Progress {
+public enum Progress {
     case queued
     case paused
     case inProgress(Double)
     case finished(Bool)
     
-    var score: Int {
+    public var score: Int {
         switch self {
         case .queued:           return 0
         case .paused:           return 1
@@ -35,7 +35,7 @@ enum Progress {
         }
     }
     
-    var advance: Progress {
+    public var advance: Progress {
         switch self {
         case .queued:            return .inProgress(0)
         case .paused:            return .inProgress(0)

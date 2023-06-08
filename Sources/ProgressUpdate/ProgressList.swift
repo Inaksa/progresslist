@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ProgressList: View {
+public struct ProgressList: View {
     @State var items: [ProgressItem] = []
     
     @State var isAdvancing: Bool = false
@@ -55,7 +55,7 @@ struct ProgressList: View {
         return retValue
     }
 
-    var body: some View {
+    public var body: some View {
         List {
             Section("In Progress") {
                 ForEach(getInProgressItems(), id:\.self) { item in
