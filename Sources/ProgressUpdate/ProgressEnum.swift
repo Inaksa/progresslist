@@ -4,7 +4,7 @@
 
 import Foundation
 
-public struct ProgressItem {
+public struct INProgressItem {
     var status: Progress
     var lastUpdate: Date = Date()
     var name: String = {
@@ -12,13 +12,13 @@ public struct ProgressItem {
     }()
 }
 
-extension ProgressItem: CustomStringConvertible {
+extension INProgressItem: CustomStringConvertible {
     public var description: String {
         return "\(status)"
     }
 }
 
-extension ProgressItem: Hashable {}
+extension INProgressItem: Hashable {}
 
 public enum Progress {
     case queued
@@ -48,8 +48,8 @@ public enum Progress {
 
 extension Progress: Equatable, Hashable {}
 
-extension Array<ProgressItem> {
-    func sorted() -> Array<ProgressItem> {
+extension Array<INProgressItem> {
+    func sorted() -> Array<INProgressItem> {
         self.sorted { pi1, pi2 in
             switch (pi1.status, pi2.status) {
             case (let .inProgress(pi1Value), let .inProgress(pi2Value)):

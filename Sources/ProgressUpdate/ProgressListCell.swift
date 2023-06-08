@@ -37,7 +37,7 @@ extension Progress {
 }
 
 struct ProgressListCell: View {
-    var item: ProgressItem
+    var item: INProgressItem
     
     var body: some View {
         VStack(alignment: .leading) {
@@ -67,12 +67,12 @@ struct ProgressListCell: View {
 struct ProgressListCell_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            ProgressListCell(item: ProgressItem(status: .queued))
-            ProgressListCell(item: ProgressItem(status: .paused))
-            ProgressListCell(item: ProgressItem(status: .finished(true)))
-            ProgressListCell(item: ProgressItem(status: .finished(false)))
-            ProgressListCell(item: ProgressItem(status: .inProgress(5)))
-            ProgressListCell(item: ProgressItem(status: .inProgress(90)))
+            ProgressListCell(item: INProgressItem(status: .queued))
+            ProgressListCell(item: INProgressItem(status: .paused))
+            ProgressListCell(item: INProgressItem(status: .finished(true)))
+            ProgressListCell(item: INProgressItem(status: .finished(false)))
+            ProgressListCell(item: INProgressItem(status: .inProgress(5)))
+            ProgressListCell(item: INProgressItem(status: .inProgress(90)))
         }
             .frame(maxHeight: .infinity, alignment: .top)
     }

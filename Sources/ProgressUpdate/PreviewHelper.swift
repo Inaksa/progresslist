@@ -4,8 +4,8 @@
 
 import Foundation
 
-extension ProgressItem {
-    static func getItems(_ n: Int = 10) -> [ProgressItem] {
+extension INProgressItem {
+    static func getItems(_ n: Int = 10) -> [INProgressItem] {
         let statuses: [Progress] =
             [
                 .paused,
@@ -18,17 +18,17 @@ extension ProgressItem {
                 .inProgress(Double(Int(arc4random()) % 100)),
             ]
         
-        var retValue: [ProgressItem] = []
+        var retValue: [INProgressItem] = []
         
         for idx in 0 ..< n {
-            let item = ProgressItem(status: statuses.randomElement()!, name: "\(idx)")
+            let item = INProgressItem(status: statuses.randomElement()!, name: "\(idx)")
             retValue.append(item)
         }
         
         return retValue
     }
     
-    static func getAllKinds() -> [ProgressItem] {
+    static func getAllKinds() -> [INProgressItem] {
         let statuses: [Progress] =
             [
                 .paused,
@@ -38,10 +38,10 @@ extension ProgressItem {
                 .inProgress(20),
             ]
         
-        var retValue: [ProgressItem] = []
+        var retValue: [INProgressItem] = []
         
         for idx in 0 ..< statuses.count {
-            let item = ProgressItem(status: statuses[idx], name: "\(idx)")
+            let item = INProgressItem(status: statuses[idx], name: "\(idx)")
             retValue.append(item)
         }
         

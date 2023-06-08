@@ -8,14 +8,14 @@ final class ProgressUpdateTests: XCTestCase {
         // results.
         XCTAssertEqual(ProgressUpdate().text, "Hello, World!")
         
-        let progressItems: [ProgressItem] =
+        let progressItems: [INProgressItem] =
         [
-            ProgressItem(status: .inProgress(30)),
-            ProgressItem(status: .inProgress(20)),
-            ProgressItem(status: .queued),
-            ProgressItem(status: .queued, lastUpdate: Date(timeIntervalSinceNow: 100000)),
-            ProgressItem(status: .finished(true)),
-            ProgressItem(status: .finished(false)),
+            INProgressItem(status: .inProgress(30)),
+            INProgressItem(status: .inProgress(20)),
+            INProgressItem(status: .queued),
+            INProgressItem(status: .queued, lastUpdate: Date(timeIntervalSinceNow: 100000)),
+            INProgressItem(status: .finished(true)),
+            INProgressItem(status: .finished(false)),
         ]
         
         print(progressItems.sorted())

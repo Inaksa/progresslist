@@ -8,15 +8,15 @@
 import SwiftUI
 
 public struct ProgressList: View {
-    @State var items: [ProgressItem] = []
+    @State var items: [INProgressItem] = []
     
     @State var isAdvancing: Bool = false
     
     var showDetail: Bool = true
     
-    private func getAllItems(in status: Progress) -> [ProgressItem] {
+    private func getAllItems(in status: Progress) -> [INProgressItem] {
         let scoreSection = status.score
-        var retValue: [ProgressItem] = []
+        var retValue: [INProgressItem] = []
         
         for item in items where scoreSection == item.status.score {
             retValue.append(item)
@@ -25,8 +25,8 @@ public struct ProgressList: View {
         return retValue
     }
 
-    private func getFinishedItems() -> [ProgressItem] {
-        var retValue: [ProgressItem] = []
+    private func getFinishedItems() -> [INProgressItem] {
+        var retValue: [INProgressItem] = []
         
         for item in items {
             switch item.status {
@@ -40,8 +40,8 @@ public struct ProgressList: View {
         return retValue
     }
 
-    private func getInProgressItems() -> [ProgressItem] {
-        var retValue: [ProgressItem] = []
+    private func getInProgressItems() -> [INProgressItem] {
+        var retValue: [INProgressItem] = []
         
         for item in items {
             switch item.status {
@@ -104,6 +104,6 @@ public struct ProgressList: View {
 
 struct ProgressList_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressList(items: ProgressItem.getAllKinds())
+        ProgressList(items: INProgressItem.getAllKinds())
     }
 }
