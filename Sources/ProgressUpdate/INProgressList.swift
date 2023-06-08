@@ -1,5 +1,5 @@
 //
-//  ProgressList.swift
+//  INProgressList.swift
 //  
 //
 //  Created by Alex Maggio on 07/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-public struct ProgressList: View {
+public struct INProgressList: View {
     @State var items: [INProgressItem] = []
     
     @State var isAdvancing: Bool = false
@@ -104,6 +104,6 @@ public struct ProgressList: View {
 
 struct ProgressList_Previews: PreviewProvider {
     static var previews: some View {
-        ProgressList(items: INProgressItem.getAllKinds())
+        INProgressList(items: INProgressItem.getAllKinds())
     }
 }
