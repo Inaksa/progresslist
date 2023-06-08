@@ -23,9 +23,13 @@ let package = Package(
         // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
             name: "ProgressUpdate",
-            dependencies: []),
+            dependencies: [],
+            exclude: ["Sample"]
+        ),
         .testTarget(
             name: "ProgressUpdateTests",
-            dependencies: ["ProgressUpdate"]),
+            dependencies: ["ProgressUpdate"],
+            exclude: ["Sample"]
+        ),
     ]
 )
