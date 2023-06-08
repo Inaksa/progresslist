@@ -14,7 +14,7 @@ public struct ProgressList: View {
     
     var showDetail: Bool = true
     
-    private func getAllItems(in status: Progress) -> [INProgressItem] {
+    private func getAllItems(in status: INProgress) -> [INProgressItem] {
         let scoreSection = status.score
         var retValue: [INProgressItem] = []
         
@@ -59,25 +59,25 @@ public struct ProgressList: View {
         List {
             Section("In Progress") {
                 ForEach(getInProgressItems(), id:\.self) { item in
-                    ProgressListCell(item: item)
+                    INProgressListCell(item: item)
                 }
             }
             
             Section("Pending") {
                 ForEach(getAllItems(in: .queued), id:\.self) { item in
-                    ProgressListCell(item: item)
+                    INProgressListCell(item: item)
                 }
             }
             
             Section("Paused") {
                 ForEach(getAllItems(in: .paused), id:\.self) { item in
-                    ProgressListCell(item: item)
+                    INProgressListCell(item: item)
                 }
             }
             
             Section("Completed") {
                 ForEach(getFinishedItems(), id:\.self) { item in
-                    ProgressListCell(item: item)
+                    INProgressListCell(item: item)
                 }
             }
         }

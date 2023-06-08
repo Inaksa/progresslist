@@ -5,7 +5,7 @@
 import Foundation
 
 public struct INProgressItem {
-    var status: Progress
+    var status: INProgress
     var lastUpdate: Date = Date()
     var name: String = {
         "\(Int(arc4random()) % 1000)"
@@ -20,7 +20,7 @@ extension INProgressItem: CustomStringConvertible {
 
 extension INProgressItem: Hashable {}
 
-public enum Progress {
+public enum INProgress {
     case queued
     case paused
     case inProgress(Double)
@@ -35,7 +35,7 @@ public enum Progress {
         }
     }
     
-    public var advance: Progress {
+    public var advance: INProgress {
         switch self {
         case .queued:            return .inProgress(0)
         case .paused:            return .inProgress(0)
@@ -46,7 +46,7 @@ public enum Progress {
 
 }
 
-extension Progress: Equatable, Hashable {}
+extension INProgress: Equatable, Hashable {}
 
 extension Array<INProgressItem> {
     func sorted() -> Array<INProgressItem> {

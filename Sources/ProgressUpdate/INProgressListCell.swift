@@ -1,5 +1,5 @@
 //
-//  ProgressListCell.swift
+//  INProgressListCell.swift
 //  
 //
 //  Created by Alex Maggio on 07/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Progress {
+extension INProgress {
     var iconName: String {
         switch self {
         case .queued:
@@ -36,7 +36,7 @@ extension Progress {
 
 }
 
-struct ProgressListCell: View {
+struct INProgressListCell: View {
     var item: INProgressItem
     
     var body: some View {
@@ -67,12 +67,12 @@ struct ProgressListCell: View {
 struct ProgressListCell_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
-            ProgressListCell(item: INProgressItem(status: .queued))
-            ProgressListCell(item: INProgressItem(status: .paused))
-            ProgressListCell(item: INProgressItem(status: .finished(true)))
-            ProgressListCell(item: INProgressItem(status: .finished(false)))
-            ProgressListCell(item: INProgressItem(status: .inProgress(5)))
-            ProgressListCell(item: INProgressItem(status: .inProgress(90)))
+            INProgressListCell(item: INProgressItem(status: .queued))
+            INProgressListCell(item: INProgressItem(status: .paused))
+            INProgressListCell(item: INProgressItem(status: .finished(true)))
+            INProgressListCell(item: INProgressItem(status: .finished(false)))
+            INProgressListCell(item: INProgressItem(status: .inProgress(5)))
+            INProgressListCell(item: INProgressItem(status: .inProgress(90)))
         }
             .frame(maxHeight: .infinity, alignment: .top)
     }
