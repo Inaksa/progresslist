@@ -10,9 +10,8 @@ import SwiftUI
 public struct INProgressList: View {
     @State var items: [INProgressItem] = []
     
-    @State var isAdvancing: Bool = false
-    
-    var showDetail: Bool = true
+    @State private var isAdvancing: Bool = false
+    @State private var showDetail: Bool = true
     
     private func getAllItems(in status: INProgress) -> [INProgressItem] {
         let scoreSection = status.score
