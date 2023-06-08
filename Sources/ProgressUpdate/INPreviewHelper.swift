@@ -5,7 +5,7 @@
 import Foundation
 
 public extension INProgressItem {
-    static func getItems(_ n: Int = 10) -> [INProgressItem] {
+    public static func getItems(_ n: Int = 10) -> [INProgressItem] {
         let statuses: [INProgress] =
             [
                 .paused,
@@ -28,7 +28,7 @@ public extension INProgressItem {
         return retValue
     }
     
-    static func getAllKinds() -> [INProgressItem] {
+    public static func getAllKinds() -> [INProgressItem] {
         let statuses: [INProgress] =
             [
                 .paused,
