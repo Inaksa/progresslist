@@ -48,7 +48,7 @@ public enum INProgress {
 
 extension INProgress: Equatable, Hashable {}
 
-extension Array<INProgressItem> {
+public extension Array<INProgressItem> {
     func sorted() -> Array<INProgressItem> {
         self.sorted { pi1, pi2 in
             switch (pi1.status, pi2.status) {

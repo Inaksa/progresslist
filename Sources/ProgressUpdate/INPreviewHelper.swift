@@ -4,7 +4,7 @@
 
 import Foundation
 
-extension INProgressItem {
+public extension INProgressItem {
     static func getItems(_ n: Int = 10) -> [INProgressItem] {
         let statuses: [INProgress] =
             [

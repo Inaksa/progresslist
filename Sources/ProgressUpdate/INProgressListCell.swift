@@ -7,8 +7,8 @@
 
 import SwiftUI
 
-extension INProgress {
-    var iconName: String {
+public extension INProgress {
+    public var iconName: String {
         switch self {
         case .queued:
             return "tray.and.arrow.down"
@@ -21,7 +21,7 @@ extension INProgress {
         }
     }
     
-    var iconColor: Color {
+    public var iconColor: Color {
         switch self {
         case .queued:
             return .blue
@@ -36,10 +36,10 @@ extension INProgress {
 
 }
 
-struct INProgressListCell: View {
+public struct INProgressListCell: View {
     var item: INProgressItem
     
-    var body: some View {
+    public var body: some View {
         VStack(alignment: .leading) {
             HStack {
                 Image(systemName: item.status.iconName)
@@ -61,9 +61,9 @@ struct INProgressListCell: View {
         }
             .padding()
             .frame(minHeight: 30)
-//            .listRowSeparator(.hidden)
     }
 }
+
 struct ProgressListCell_Previews: PreviewProvider {
     static var previews: some View {
         VStack {
