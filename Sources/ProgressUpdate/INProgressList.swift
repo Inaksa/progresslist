@@ -53,10 +53,6 @@ public struct INProgressList: View {
         
         return retValue
     }
-
-    public init(items: [INProgressItem]) {
-        self.items = items
-    }
     
     public var body: some View {
         List {
